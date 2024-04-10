@@ -77,11 +77,13 @@ public class rgstrtion extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 255));
+        jPanel1.setBackground(new java.awt.Color(102, 255, 102));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton1.setText("REGISTER");
@@ -90,7 +92,7 @@ public class rgstrtion extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 380, 91, -1));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 330, 91, -1));
 
         user.setFont(new java.awt.Font("Yu Gothic", 1, 11)); // NOI18N
         user.setForeground(new java.awt.Color(153, 153, 153));
@@ -106,7 +108,7 @@ public class rgstrtion extends javax.swing.JFrame {
                 userActionPerformed(evt);
             }
         });
-        jPanel1.add(user, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 130, 250, 29));
+        jPanel1.add(user, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 100, 250, 29));
 
         pass.setFont(new java.awt.Font("Yu Gothic", 1, 11)); // NOI18N
         pass.setForeground(new java.awt.Color(153, 153, 153));
@@ -122,7 +124,7 @@ public class rgstrtion extends javax.swing.JFrame {
                 passActionPerformed(evt);
             }
         });
-        jPanel1.add(pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 180, 250, 29));
+        jPanel1.add(pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 140, 250, 29));
 
         email.setFont(new java.awt.Font("Yu Gothic", 1, 11)); // NOI18N
         email.setForeground(new java.awt.Color(153, 153, 153));
@@ -138,7 +140,7 @@ public class rgstrtion extends javax.swing.JFrame {
                 emailActionPerformed(evt);
             }
         });
-        jPanel1.add(email, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 220, 250, 29));
+        jPanel1.add(email, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 180, 250, 29));
 
         contact.setFont(new java.awt.Font("Yu Gothic", 1, 11)); // NOI18N
         contact.setForeground(new java.awt.Color(153, 153, 153));
@@ -154,7 +156,7 @@ public class rgstrtion extends javax.swing.JFrame {
                 contactActionPerformed(evt);
             }
         });
-        jPanel1.add(contact, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 270, 250, 29));
+        jPanel1.add(contact, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 220, 250, 29));
 
         endUser.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ADMIN", "USER" }));
         endUser.addActionListener(new java.awt.event.ActionListener() {
@@ -162,7 +164,7 @@ public class rgstrtion extends javax.swing.JFrame {
                 endUserActionPerformed(evt);
             }
         });
-        jPanel1.add(endUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 320, 250, 33));
+        jPanel1.add(endUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 260, 250, 33));
 
         jButton2.setText("EXIT");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -170,15 +172,23 @@ public class rgstrtion extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 380, 91, -1));
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 330, 91, -1));
 
         jLabel1.setFont(new java.awt.Font("Serif", 1, 24)); // NOI18N
-        jLabel1.setText("INSURANCE TRACKER");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 20, 280, 40));
+        jLabel1.setText("Management");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 90, 170, 50));
 
         jLabel2.setFont(new java.awt.Font("Serif", 1, 24)); // NOI18N
         jLabel2.setText("Registration");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 60, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, -1, -1));
+
+        jLabel3.setFont(new java.awt.Font("Serif", 1, 24)); // NOI18N
+        jLabel3.setText("System");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 100, 40));
+
+        jLabel4.setFont(new java.awt.Font("Serif", 1, 24)); // NOI18N
+        jLabel4.setText("Library");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 100, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -314,6 +324,8 @@ public class rgstrtion extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField pass;
     private javax.swing.JTextField user;
