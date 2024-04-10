@@ -2,7 +2,7 @@ package Login;
 
 import Admin.AdminDSB;
 import Config.DBConnector;
-import Reg.RegDSB;
+import rgstrtn.rgstrtion;
 import User.UserDSB;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -11,9 +11,9 @@ import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
-public class LoginDSB extends javax.swing.JFrame {
+public class LoginForm extends javax.swing.JFrame {
 
-    public LoginDSB() {
+    public LoginForm() {
         initComponents();
     }
 
@@ -71,7 +71,7 @@ public class LoginDSB extends javax.swing.JFrame {
         setPreferredSize(new java.awt.Dimension(412, 509));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setBackground(new java.awt.Color(204, 204, 255));
+        jPanel2.setBackground(new java.awt.Color(0, 204, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         endUsers.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ADMIN", "USER" }));
@@ -103,7 +103,7 @@ public class LoginDSB extends javax.swing.JFrame {
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 290, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("Yu Gothic", 1, 25)); // NOI18N
-        jLabel1.setText("INSURANCE TRACKER");
+        jLabel1.setText("Library Management");
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 30, -1, 30));
 
         user.setFont(new java.awt.Font("Yu Gothic", 1, 11)); // NOI18N
@@ -156,7 +156,7 @@ public class LoginDSB extends javax.swing.JFrame {
         jLabel4.setText("Forgot Password?");
         jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 250, -1, 20));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 490, 410));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 680, 430));
 
         pack();
         setLocationRelativeTo(null);
@@ -175,7 +175,7 @@ public class LoginDSB extends javax.swing.JFrame {
     }//GEN-LAST:event_passMouseClicked
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
-        new RegDSB().setVisible(true);
+        new rgstrtion().setVisible(true);
         dispose();
     }//GEN-LAST:event_jLabel5MouseClicked
 
@@ -213,7 +213,7 @@ public class LoginDSB extends javax.swing.JFrame {
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new LoginDSB().setVisible(true);
+                new LoginForm().setVisible(true);
             }
         });
     }
