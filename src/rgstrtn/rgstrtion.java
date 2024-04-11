@@ -30,7 +30,7 @@ public class rgstrtion extends javax.swing.JFrame {
 
         try (Connection cn = new DBConnector().getConnection()) {
 
-            PreparedStatement checkerStmt = cn.prepareStatement("SELECT COUNT(*) FROM jose WHERE email = ? OR user = ? OR contact = ?");
+            PreparedStatement checkerStmt = cn.prepareStatement("SELECT COUNT(*) FROM inoras WHERE email = ? OR user = ? OR contact = ?");
             checkerStmt.setString(1, email);
             checkerStmt.setString(2, user);
             checkerStmt.setString(3, contact);
@@ -45,7 +45,7 @@ public class rgstrtion extends javax.swing.JFrame {
 
             cn.setAutoCommit(false);
 
-            PreparedStatement insertStmt = cn.prepareStatement("INSERT INTO jose (email,contact,user,pass,status) VALUES (?,?,?,?,'Active')");
+            PreparedStatement insertStmt = cn.prepareStatement("INSERT INTO inoras (email,contact,user,pass,status) VALUES (?,?,?,?,'Active')");
             insertStmt.setString(1, email);
             insertStmt.setString(2, contact);
             insertStmt.setString(3, user);
@@ -75,15 +75,15 @@ public class rgstrtion extends javax.swing.JFrame {
         contact = new javax.swing.JTextField();
         endUser = new javax.swing.JComboBox<>();
         jButton2 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel171 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
-        jPanel1.setBackground(new java.awt.Color(102, 255, 102));
+        jPanel1.setBackground(new java.awt.Color(204, 153, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton1.setText("REGISTER");
@@ -92,7 +92,7 @@ public class rgstrtion extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 330, 91, -1));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 330, 91, -1));
 
         user.setFont(new java.awt.Font("Yu Gothic", 1, 11)); // NOI18N
         user.setForeground(new java.awt.Color(153, 153, 153));
@@ -108,7 +108,7 @@ public class rgstrtion extends javax.swing.JFrame {
                 userActionPerformed(evt);
             }
         });
-        jPanel1.add(user, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 100, 250, 29));
+        jPanel1.add(user, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 110, 250, 30));
 
         pass.setFont(new java.awt.Font("Yu Gothic", 1, 11)); // NOI18N
         pass.setForeground(new java.awt.Color(153, 153, 153));
@@ -124,7 +124,7 @@ public class rgstrtion extends javax.swing.JFrame {
                 passActionPerformed(evt);
             }
         });
-        jPanel1.add(pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 140, 250, 29));
+        jPanel1.add(pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 150, 250, 29));
 
         email.setFont(new java.awt.Font("Yu Gothic", 1, 11)); // NOI18N
         email.setForeground(new java.awt.Color(153, 153, 153));
@@ -140,7 +140,7 @@ public class rgstrtion extends javax.swing.JFrame {
                 emailActionPerformed(evt);
             }
         });
-        jPanel1.add(email, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 180, 250, 29));
+        jPanel1.add(email, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 190, 250, 29));
 
         contact.setFont(new java.awt.Font("Yu Gothic", 1, 11)); // NOI18N
         contact.setForeground(new java.awt.Color(153, 153, 153));
@@ -156,7 +156,7 @@ public class rgstrtion extends javax.swing.JFrame {
                 contactActionPerformed(evt);
             }
         });
-        jPanel1.add(contact, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 220, 250, 29));
+        jPanel1.add(contact, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 230, 250, 29));
 
         endUser.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ADMIN", "USER" }));
         endUser.addActionListener(new java.awt.event.ActionListener() {
@@ -164,7 +164,7 @@ public class rgstrtion extends javax.swing.JFrame {
                 endUserActionPerformed(evt);
             }
         });
-        jPanel1.add(endUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 260, 250, 33));
+        jPanel1.add(endUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 280, 250, 33));
 
         jButton2.setText("EXIT");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -172,35 +172,31 @@ public class rgstrtion extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 330, 91, -1));
-
-        jLabel1.setFont(new java.awt.Font("Serif", 1, 24)); // NOI18N
-        jLabel1.setText("Management");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 90, 170, 50));
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 330, 91, -1));
 
         jLabel2.setFont(new java.awt.Font("Serif", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Registration");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 50, -1, -1));
 
-        jLabel3.setFont(new java.awt.Font("Serif", 1, 24)); // NOI18N
-        jLabel3.setText("System");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 100, 40));
+        jLabel5.setFont(new java.awt.Font("Serif", 1, 36)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("INSURANCE TRACKER");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, 30));
 
-        jLabel4.setFont(new java.awt.Font("Serif", 1, 24)); // NOI18N
-        jLabel4.setText("Library");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 100, 40));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/Riders for Insurance benefits.jpg"))); // NOI18N
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-130, 0, 840, 430));
+        jPanel1.add(jLabel171, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 740, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 709, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 473, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 432, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -212,7 +208,7 @@ public class rgstrtion extends javax.swing.JFrame {
         if (contact.getText().length() <= 10) {
             JOptionPane.showMessageDialog(this, "Contact Must Be Atleast 10 Characters!");
         } else if (!email.getText().contains("@gmail.com")) {
-            JOptionPane.showMessageDialog(this, "Email Must Contain @gmail.com! TANGINAMO!");
+            JOptionPane.showMessageDialog(this, "Email Must Contain @gmail.com! Hiii Po!");
         } else if (pass.getText().length() <= 7) {
             JOptionPane.showMessageDialog(this, "Password Must Be Atleast 7 Characters!");
         } else {
@@ -222,7 +218,7 @@ public class rgstrtion extends javax.swing.JFrame {
                 String selectedUser = (String) endUser.getSelectedItem();
 
                 if ("USER".equals(selectedUser)) {
-                    new UserDSB().setVisible(true);
+                    new AdminDSB().setVisible(true);
                     dispose();
                 } else if ("ADMIN".equals(selectedUser)) {
                     new AdminDSB().setVisible(true);
@@ -323,9 +319,9 @@ public class rgstrtion extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel171;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField pass;
     private javax.swing.JTextField user;
