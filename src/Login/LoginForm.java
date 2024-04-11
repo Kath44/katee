@@ -165,14 +165,25 @@ public class LoginForm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        if (loginAccount(user.getText(), pass.getText())) {
-            JOptionPane.showMessageDialog(null,"Sucess");
-            AdminDSB AdminDSB = new AdminDSB();
-            AdminDSB.setVisible(true);
-            this.dispose();
+      if (loginAccount(user.getText(), pass.getText())) {
+            
+            String selectedUser = (String) endUsers.getSelectedItem();
+
+            if ("USER".equals(selectedUser)) {
+               new UserDSB().setVisible(true);
+                dispose();
+            } else if ("ADMIN".equals(selectedUser)) {
+                new AdminDSB().setVisible(true);
+                dispose();
+            } else {
+                JOptionPane.showMessageDialog(this, "ERROR: Invalid user type selected");
+            }
         }else{
-            JOptionPane.showMessageDialog(null,"failed");
+            JOptionPane.showMessageDialog(this, "ERROR!");
         }
+     
+
+
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -193,13 +204,13 @@ public class LoginForm extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_jLabel5MouseClicked
 
-    private void endUsersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_endUsersActionPerformed
-         
-    }//GEN-LAST:event_endUsersActionPerformed
-
     private void passActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passActionPerformed
        
     }//GEN-LAST:event_passActionPerformed
+
+    private void endUsersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_endUsersActionPerformed
+
+    }//GEN-LAST:event_endUsersActionPerformed
     
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {

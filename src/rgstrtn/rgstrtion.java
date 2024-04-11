@@ -92,7 +92,7 @@ public class rgstrtion extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 330, 91, -1));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 323, 91, 30));
 
         user.setFont(new java.awt.Font("Yu Gothic", 1, 11)); // NOI18N
         user.setForeground(new java.awt.Color(153, 153, 153));
@@ -218,7 +218,7 @@ public class rgstrtion extends javax.swing.JFrame {
                 String selectedUser = (String) endUser.getSelectedItem();
 
                 if ("USER".equals(selectedUser)) {
-                    new AdminDSB().setVisible(true);
+                    new UserDSB().setVisible(true);
                     dispose();
                 } else if ("ADMIN".equals(selectedUser)) {
                     new AdminDSB().setVisible(true);
